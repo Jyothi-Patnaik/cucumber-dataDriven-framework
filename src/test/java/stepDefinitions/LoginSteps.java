@@ -40,35 +40,36 @@ public class LoginSteps {
     }
 
  
-//    @When("user enters email as {string} and password as {string}")
-//    public void user_enters_email_as_and_password_as(String email, String pwd) {
-//    	BaseClass.getLogger().info("Entering email and password.. ");
-//    	
-//    	lp=new LoginPage(BaseClass.getDriver());
-//       	lp.setEmail(email);
-//        lp.setPassword(pwd);
-//        }
-//
-//    @When("the user clicks on the Login button")
-//    public void click_on_login_button() {
-//        lp.clickLogin();
-//        BaseClass.getLogger().info("clicked on login button...");
-//    	
-//        
-//    }
-//
-//
-//    @Then("the user should be redirected to the MyAccount Page")
-//    public void user_navigates_to_my_account_page() {
-//    	macc=new MyAccountPage(BaseClass.getDriver());
-//		boolean targetpage=macc.isMyAccountPageExists();
-//				
-//		Assert.assertEquals(targetpage, true);
-//        
-//    }
-//}
-//
-// /*   
+    @When("user enters email as {string} and password as {string}")
+    public void user_enters_email_as_and_password_as(String email, String pwd) {
+    	BaseClass.getLogger().info("Entering email and password.. ");
+    	
+    	lp=new LoginPage(BaseClass.getDriver());
+       	lp.setEmail(email);
+        lp.setPassword(pwd);
+        }
+
+    @When("the user clicks on the Login button")
+    public void click_on_login_button() {
+        lp.clickLogin();
+        BaseClass.getLogger().info("clicked on login button...");
+    	
+        
+    }
+
+
+    @Then("the user should be redirected to the MyAccount Page")
+    public void user_navigates_to_my_account_page() {
+    	macc=new MyAccountPage(BaseClass.getDriver());
+		boolean targetpage=macc.isMyAccountPageExists();
+		
+		System.out.println("targetPage exists : "+ targetpage);		
+		Assert.assertEquals(targetpage, true);
+        
+    }
+}
+
+ /*   
     //*******   Data Driven test **************
     @Then("the user should be redirected to the MyAccount Page by passing email and password with excel row {string}")
     public void check_user_navigates_to_my_account_page_by_passing_email_and_password_with_excel_data(String rows)
@@ -95,11 +96,11 @@ public class LoginSteps {
         macc=new MyAccountPage(BaseClass.getDriver());
         try
         {
-            boolean targetpage=macc.isMyAccountPageExists();
-            System.out.println("target page: "+ targetpage);
+        	boolean targetPage= macc.isMyAccountPageExists();
+			System.out.println("expRes is: "+ exp_res + " and " + "targetPage exists : "+ targetPage);
             if(exp_res.equalsIgnoreCase("Valid"))
             {
-                if(targetpage==true)
+                if(targetPage==true)
                 {
                     MyAccountPage myaccpage=new MyAccountPage(BaseClass.getDriver());
                     myaccpage.clickLogout();
@@ -113,7 +114,7 @@ public class LoginSteps {
 
             if(exp_res.equalsIgnoreCase("Invalid"))
             {
-                if(targetpage==true)
+                if(targetPage==true)
                 {
                     macc.clickLogout();
                     Assert.assertTrue(false);
@@ -134,4 +135,4 @@ public class LoginSteps {
       }
 }
  
-//}*/
+}*/

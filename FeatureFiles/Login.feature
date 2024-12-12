@@ -16,5 +16,5 @@ Feature: Login with Valid Credentials
 
     Examples: 
       | email                     | password |
-      | pavanol@gmail.com         | test123  |
+      | pavanol@gmail.com         | testm123  |
       | pavanoltraining@gmail.com | test@123 |
