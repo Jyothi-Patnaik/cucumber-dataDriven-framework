@@ -8,10 +8,10 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 					//features= {".//FeatureFiles/"},
-					features= {".//FeatureFiles/Login.feature"},
+					//features= {".//FeatureFiles/Login.feature"},
 					//features= {".//FeatureFiles/Registration.feature"},
 		
-					//features= {".//FeatureFiles/LoginDDTExcel.feature"},
+					features= {".//FeatureFiles/LoginDDTExcel.feature"},
 					//features= {".//FeatureFiles/Login.feature",".//Features/Registration.feature"},
 					//features= {"@target/rerun.txt"},
 					glue={"stepDefinitions","hooks"},
